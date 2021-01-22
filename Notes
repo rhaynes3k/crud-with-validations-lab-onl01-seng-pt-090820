@@ -1,0 +1,7 @@
+describe "basic listing, viewing and editing" do
+    let(:song) { Song.create!(valid_attributes) } # this creates a song and assigns it to the `song` variable
+
+    it "lists all songs" do
+      get :index #this runs the `get index` route
+      expect(assigns(:songs)).to eq([song]) #this checks the value of the instance variable `songs` in that route and expects it to be the same as the song created above in an array
+    end
